@@ -40,7 +40,8 @@ dd if=/dev/zero of=$DRIVE bs=1M count=256
 
 echo Cretaing boot partition
 echo ",15,0x0C,* 
-16,$ROOTSZ,0x83,"| sfdisk -D -H 255 -S 63 -C $CYLINDERS $DRIVE
+16,$ROOTSZ,0x83,"| sfdisk -D -H 255 -S 63 -C $CYLINDERS $DRIVE 
+#It doesn't work on my Debian 8.6, you can't use sfdisk with such keys there, so I did it using fdisk. 
 
 sleep 1
 
